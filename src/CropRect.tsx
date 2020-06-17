@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Draggable from "react-draggable"
+import Draggable, { DraggableCore } from "react-draggable"
 
 import "./CropRect.css"
 import CropRectResizeHandler from "./CropRectResizeHandler"
@@ -22,7 +22,6 @@ function CropRect() {
 	return (
 		<Draggable
 			bounds="main"
-			onStop={(e, data) => {}}
 			cancel=".croparea--hotcorner"
 		>
 			<section

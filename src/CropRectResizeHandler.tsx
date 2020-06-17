@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Draggable from "react-draggable"
+import Draggable, { DraggableCore } from "react-draggable"
 
 import "./CropRectResizeHandler.css"
 
@@ -31,6 +31,7 @@ function updateCropRect(
 	data: DraggableData,
 	handlePosition: String
 ) {
+	console.log("updateCropRect")
 	const { height: oldHeight, width: oldWidth, x: oldX, y: oldY } = oldCrop
 	const { deltaX, deltaY } = data
 
@@ -62,18 +63,16 @@ function CropRectResizeHandler(props: CropRectResizeHandlerProps) {
 
 	return (
 		<React.Fragment>
-			<div className={`croparea--hotcorner position-${handlePosition}`}></div>
-			<Draggable
+			<DraggableCore
 				onDrag={(e, data) => {
-					console.log(data)
+					// console.log(data)
 					setCropRect((oldCrop: CropRect) =>
 						updateCropRect(oldCrop, data, handlePosition)
 					)
 				}}
-				position={{ x: 0, y: 0 }}
 			>
-				<div className={`croparea--hotcorner invisible position-${handlePosition}`}></div>
-			</Draggable>
+				<div className={`croparea--hotcorner position-${handlePosition}`}></div>
+			</DraggableCore>
 		</React.Fragment>
 	)
 }
