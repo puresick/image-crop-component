@@ -1,3 +1,12 @@
+/* NOTE: The variable `--lines-vertical` uses CSS linear-gradient to
+ * create a grid like gradient.
+ * It is used twice, with each progressing to a different goal direction -
+ * "to right" and "to bottom".
+ *
+ * `.croparea` uses the outline attribute with an huge size to generate a black
+ * transparent overlay around the CropRect section HTML element.
+ * */
+
 :root {
 	--invisible: rgb(0 0 0 / 0);
 	--white-transparent: rgb(255 255 255 / 0.75);

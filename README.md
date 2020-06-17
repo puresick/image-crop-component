@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Coding challenge - image-crop-component
+
+This project was part of a coding challenge and has been written using Typescript, React and [Create React App](https://github.com/facebook/create-react-app) including its `--typescript` flag to add Typescript as a dependency.
 
 ## Available Scripts
 

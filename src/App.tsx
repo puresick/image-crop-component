@@ -17,9 +17,17 @@ function App() {
 	})
 
 	useEffect(() => {
+		// NOTE: Below, the image size and ratio are being calculated to use as a
+		// base value for calculating the larger size of the image and resizing the
+		// img elements partent element (in this case the only `main` HTML element)
+		// to fit the image - and therefore the CropRect bounding box - perfectly
+		//
 		const containerElement = document.querySelector("main")
 		const imageElement = document.querySelector("img")
 
+		// NOTE: Waiting for the DOM to be loaded completely to ensure the correct sizes
+		// for `main` and `img` HTML elmenets are being gathered
+		//
 		window.addEventListener("load", event => {
 			if (containerElement && imageElement) {
 				const {
@@ -31,8 +39,6 @@ function App() {
 					naturalWidth: imageWidth
 				} = imageElement
 				const imageRatio = imageWidth / imageHeight
-				const largerSide =
-					imageWidth >= imageHeight ? containerWidth : containerHeight
 
 				setImageContainerSize({
 					width: `${
@@ -58,6 +64,10 @@ function App() {
 				height: imageContainerSize.height
 			}}
 		>
+			{/*
+				NOTE: There are two image files with different ratios in the asset folder
+				Changing the number below to 2 in the filename should point to the other image
+			*/}
 			<img
 				className="user-image"
 				src="/assets/stock-test-1.jpg"

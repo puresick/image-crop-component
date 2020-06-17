@@ -3,8 +3,6 @@ body {
 }
 
 .App {
-	height: 90vh;
-	width: 90vw;
 	position: relative;
 	background: grey;
 	overflow: hidden;
@@ -13,9 +11,8 @@ body {
 img {
 	max-height: 100%;
 	max-width: 100%;
-	object-fit: contain;
 	position: absolute;
 	top: 0;
 	left: 0;
-	pointer-events: none;
+	pointer-events: none; /* NOTE: Settings this to none prevents from accidentially dragging the image when resizing or moving CropRect DOM element */
 }

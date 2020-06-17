@@ -1,5 +1,10 @@
+// NOTE: Component containing the logic for the visual
+// cropping constraints being rendered onto the image
+// It basically uses just the functionality from react-draggable
+// so users are able to move the element around
+
 import React, { useState } from "react"
-import Draggable, { DraggableCore } from "react-draggable"
+import Draggable from "react-draggable"
 
 import "./CropRect.css"
 import CropRectResizeHandler from "./CropRectResizeHandler"
