@@ -61,16 +61,20 @@ function CropRectResizeHandler(props: CropRectResizeHandlerProps) {
 	const { handlePosition, setCropRect } = props
 
 	return (
-		<Draggable
-			onDrag={(e, data) => {
-				setCropRect((oldCrop: CropRect) =>
-					updateCropRect(oldCrop, data, handlePosition)
-				)
-			}}
-			position={{ x: 0, y: 0 }}
-		>
+		<React.Fragment>
 			<div className={`croparea--hotcorner position-${handlePosition}`}></div>
-		</Draggable>
+			<Draggable
+				onDrag={(e, data) => {
+					console.log(data)
+					setCropRect((oldCrop: CropRect) =>
+						updateCropRect(oldCrop, data, handlePosition)
+					)
+				}}
+				position={{ x: 0, y: 0 }}
+			>
+				<div className={`croparea--hotcorner invisible position-${handlePosition}`}></div>
+			</Draggable>
+		</React.Fragment>
 	)
 }
 

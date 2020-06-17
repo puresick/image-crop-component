@@ -11,12 +11,6 @@ interface CropRect {
 	height: number
 }
 
-function handleDrag(e: MouseEvent, data: Object) {
-	console.log("dragging")
-	console.log(e)
-	console.log(data)
-}
-
 function CropRect() {
 	const [cropRect, setCropRect] = useState<CropRect>({
 		x: 0,
