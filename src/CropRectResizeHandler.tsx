@@ -6,6 +6,7 @@ import "./CropRectResizeHandler.css"
 interface CropRectResizeHandlerProps {
 	cropRect: Object
 	handlePosition: String
+	imageContainerSize: ImageContainerSize
 	setCropRect: Function
 }
 
@@ -26,6 +27,11 @@ interface DraggableData {
 	deltaY: number
 	lastX: number
 	lastY: number
+}
+
+interface ImageContainerSize {
+	width: string
+	height: string
 }
 
 function updateCropRect(
@@ -57,17 +63,19 @@ function updateCropRect(
 				: oldY
 	}
 
+	console.log(copyCrop)
+
 	return copyCrop
 }
 
 function CropRectResizeHandler(props: CropRectResizeHandlerProps) {
-	const { handlePosition, setCropRect } = props
+	const { handlePosition, imageContainerSize, setCropRect } = props
 
 	return (
 		<React.Fragment>
 			<DraggableCore
 				onDrag={(e, data) => {
-					// console.log(data)
+					e.preventDefault()
 					setCropRect((oldCrop: CropRect) =>
 						updateCropRect(oldCrop, data, handlePosition)
 					)

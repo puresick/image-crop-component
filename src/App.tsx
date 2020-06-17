@@ -26,23 +26,25 @@ function App() {
 					clientHeight: containerHeight,
 					clientWidth: containerWidth
 				} = containerElement
-
 				const {
 					naturalHeight: imageHeight,
 					naturalWidth: imageWidth
 				} = imageElement
-
 				const imageRatio = imageWidth / imageHeight
+				const largerSide =
+					imageWidth >= imageHeight ? containerWidth : containerHeight
 
-				console.log(containerWidth)
-				console.log(containerHeight)
-
-				const largerSide = imageWidth >= imageHeight ? containerWidth : containerHeight
-				console.log(`largerSide: ${largerSide}`)
-				
 				setImageContainerSize({
-					width: `${imageWidth >= imageHeight ? containerWidth : containerHeight * imageRatio}px`,
-					height: `${imageWidth >= imageHeight ? containerWidth / imageRatio : containerHeight}px`
+					width: `${
+						imageWidth >= imageHeight
+							? containerWidth
+							: containerHeight * imageRatio
+					}px`,
+					height: `${
+						imageWidth >= imageHeight
+							? containerWidth / imageRatio
+							: containerHeight
+					}px`
 				})
 			}
 		})
@@ -61,7 +63,7 @@ function App() {
 				src="/assets/stock-test-1.jpg"
 				alt="file user uploaded to use in cropping mechanism"
 			/>
-			<CropRect />
+			<CropRect imageContainerSize={imageContainerSize} />
 		</main>
 	)
 }
