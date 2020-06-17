@@ -1,6 +1,28 @@
+:root {
+	--invisible: rgb(0 0 0 / 0);
+	--white-transparent: rgb(255 255 255 / 75);
+	--lines-vertical: linear-gradient(
+		to right,
+		var(--invisible) 33%,
+		var(--white-transparent) 33% calc(33% + 2px),
+		var(--invisible) calc(33% + 2px) 66%,
+		var(--white-transparent) 66% calc(66% + 2px),
+		var(--invisible) calc(66% + 2px) 100%
+	);
+	--lines-horizontal: linear-gradient(
+		to bottom,
+		var(--invisible) 33%,
+		var(--white-transparent) 33% calc(33% + 2px),
+		var(--invisible) calc(33% + 2px) 66%,
+		var(--white-transparent) 66% calc(66% + 2px),
+		var(--invisible) calc(66% + 2px) 100%
+	);
+}
+
 .croparea {
-	background: red;
+	background: var(--lines-vertical), var(--lines-horizontal);
 	position: absolute;
 	top: 0;
 	left: 0;
+	box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.75);
 }

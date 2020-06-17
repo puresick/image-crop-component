@@ -1,6 +1,5 @@
 .croparea--hotcorner {
 	position: absolute;
-	background: white;
 	height: 1rem;
 	width: 1rem;
 }
@@ -8,19 +7,47 @@
 .position-topleft {
 	top: 0;
 	left: 0;
+	border-top-color: white;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-left-color: white;
+	border-left-width: 4px;
+	border-left-style: solid;
+	cursor: nwse-resize;
 }
 
 .position-topright {
 	top: 0;
 	right: 0;
+	border-top-color: white;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-right-color: white;
+	border-right-width: 4px;
+	border-right-style: solid;
+	cursor: nesw-resize;
 }
 
 .position-bottomleft {
 	bottom: 0;
 	left: 0;
+	border-bottom-color: white;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-left-color: white;
+	border-left-width: 4px;
+	border-left-style: solid;
+	cursor: nesw-resize;
 }
 
 .position-bottomright {
 	bottom: 0;
 	right: 0;
+	border-bottom-color: white;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-right-color: white;
+	border-right-width: 4px;
+	border-right-style: solid;
+	cursor: nwse-resize;
 }
