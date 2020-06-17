@@ -39,7 +39,7 @@ function CropRect(props: CropRectProps) {
 	})
 
 	return (
-		<Draggable cancel=".croparea--hotcorner">
+		<Draggable bounds="main" cancel=".croparea--hotcorner">
 			<section
 				className="croparea"
 				style={{
