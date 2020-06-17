@@ -1,0 +1,26 @@
+.croparea--hotcorner {
+	position: absolute;
+	background: white;
+	height: 1rem;
+	width: 1rem;
+}
+
+.position-topleft {
+	top: 0;
+	left: 0;
+}
+
+.position-topright {
+	top: 0;
+	right: 0;
+}
+
+.position-bottomleft {
+	bottom: 0;
+	left: 0;
+}
+
+.position-bottomright {
+	bottom: 0;
+	right: 0;
+}
