@@ -14,6 +14,8 @@ interface CropRect {
 	y: number
 	width: number
 	height: number
+	minWidth: number
+	minHeight: number
 }
 
 interface DraggableData {
@@ -32,19 +34,19 @@ function updateCropRect(
 	handlePosition: String
 ) {
 	console.log("updateCropRect")
-	const { height: oldHeight, width: oldWidth, x: oldX, y: oldY } = oldCrop
+	const { height: oldHeight, width: oldWidth, x: oldX, y: oldY, minWidth, minHeight } = oldCrop
 	const { deltaX, deltaY } = data
 
 	const copyCrop = {
 		...oldCrop,
 		width:
 			handlePosition === "topleft" || handlePosition === "bottomleft"
-				? oldWidth - deltaX
-				: oldWidth + deltaX,
+				? oldWidth - deltaX >= minWidth ? oldWidth - deltaX : minWidth
+				: oldWidth + deltaX >= minWidth ? oldWidth + deltaX : minWidth,
 		height:
 			handlePosition === "topleft" || handlePosition === "topright"
-				? oldHeight - deltaY
-				: oldHeight + deltaY,
+				? oldHeight - deltaY >= minHeight ? oldHeight - deltaY : minHeight
+				: oldHeight + deltaY >= minHeight ? oldHeight + deltaY : minHeight,
 		x:
 			handlePosition === "topleft" || handlePosition === "bottomleft"
 				? oldX + deltaX

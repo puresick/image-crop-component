@@ -22,7 +22,5 @@
 .croparea {
 	background: var(--lines-vertical), var(--lines-horizontal);
 	position: absolute;
-	top: 0;
-	left: 0;
 	box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.75);
 }
